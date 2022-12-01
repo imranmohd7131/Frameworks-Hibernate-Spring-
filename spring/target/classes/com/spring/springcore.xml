@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+<bean name="u1" class="com.spring.University">
+<!-- <property name="uniName">
+<value> PU </value>
+</property> -->
+
+<constructor-arg>
+	<value>PU</value>
+</constructor-arg>
+</bean>
+
+<bean name="u3" class="com.spring.University">
+<!-- <property name="uniName">
+<value> JNU </value>
+</property>-->
+
+<constructor-arg>
+	<value>JNU</value>
+</constructor-arg>
+ </bean>
+
+<bean name="u2" class="com.spring.College">
+<!-- <property name="collegeName">
+<value> PGGC11 </value>
+</property> -->
+
+<constructor-arg>
+	<value>PGGC11</value>
+</constructor-arg>
+
+<!-- <property name="numOfStd">
+<value> 150 </value>
+</property>-->
+
+<constructor-arg>
+	<value>150</value>
+</constructor-arg>
+
+<constructor-arg>
+	<ref bean="u3"></ref>
+</constructor-arg>
+</bean>
+
+<bean name="e1" class="com.spring.Employee">
+<constructor-arg value="Imran"/>
+<constructor-arg value="64646"/>
+<constructor-arg value="PKL"/>
+<constructor-arg>
+<set><value>64972547392</value>
+<value>14972547392</value>
+<value>64972547392</value></set>
+</constructor-arg>
+
+<constructor-arg>
+<map>
+<entry key="1" value="Mohali"></entry>
+<entry key="2" value="Noida"></entry>
+<entry key="3" value="Pinjore"></entry>
+</map>
+</constructor-arg>
+
+</bean>
+
+
+</beans>
